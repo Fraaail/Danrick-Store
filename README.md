@@ -14,6 +14,7 @@ Built with **React**, **Vite**, and **Tailwind CSS**. A minimal [Express](https:
 - Product highlights: fresh taro, variety goods, local convenience
 - Embedded Google Map pointing to the physical location
 - Contact information with store hours, phone, and email
+- **Dark / Light theme toggler** with localStorage persistence and system-preference detection
 - Fully mobile‑responsive layout with smooth animations (via `motion`)
 
 ---
@@ -52,13 +53,34 @@ Built with **React**, **Vite**, and **Tailwind CSS**. A minimal [Express](https:
 
 ## Scripts
 
-| Command           | Description                              |
-|-------------------|------------------------------------------|
-| `npm run dev`     | Run the app locally with hot reload       |
-| `npm run build`   | Create a production build in `dist/`     |
-| `npm run preview` | Preview the production build locally     |
-| `npm run clean`   | Remove the `dist/` folder                |
-| `npm run lint`    | Type‑check the TypeScript sources        |
+| Command             | Description                              |
+|---------------------|------------------------------------------|
+| `npm run dev`       | Run the app locally with hot reload       |
+| `npm run build`     | Create a production build in `dist/`     |
+| `npm run preview`   | Preview the production build locally     |
+| `npm run clean`     | Remove the `dist/` folder                |
+| `npm run lint`      | Type‑check the TypeScript sources        |
+| `npm test`          | Run unit tests once (Vitest)             |
+| `npm run test:watch`| Run tests in watch mode                  |
+
+---
+
+## Theme Toggler
+
+The site ships with a dark / light mode toggle button in the navigation bar.
+
+- **Preference persistence** – the selected theme is saved to `localStorage` and restored on reload.
+- **System preference** – on first visit, the toggle respects the user's OS-level `prefers-color-scheme` setting.
+- **Implementation** – a React context (`ThemeProvider`) manages state; the `dark` class is toggled on `<html>`, and Tailwind's `@custom-variant dark` directive handles styling.
+
+Source files:
+
+| File | Purpose |
+|------|---------|  
+| `src/context/ThemeContext.tsx` | Context provider + `useTheme` hook |
+| `src/components/ThemeToggler.tsx` | Moon / Sun icon button |
+| `src/test/ThemeContext.test.tsx` | Unit tests for context logic |
+| `src/test/ThemeToggler.test.tsx` | Unit tests for toggle component |
 
 ---
 

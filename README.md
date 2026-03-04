@@ -89,7 +89,10 @@ Source files:
 
 - The navigation links (`#about`, `#products`, `#location`, `#contact`) correspond to sections in `src/App.tsx`. Adjust if you modify IDs.
 - The contact phone number is placeholder (`+63 (XXX) XXX-XXXX`); replace with the real number before publishing.
-- Google Maps iframe coordinates target Banago, Nagcarlan, Laguna. Update the embed if the store moves.
+- Google Maps iframe now uses explicit latitude/longitude for the precise
+  store location (coordinates taken from the share URL redirect); the short
+  link is retained separately for sharing. Update `GOOGLE_MAPS_LINK`/
+  `GOOGLE_MAPS_EMBED_URL` if the store moves.
 - Location meta tags live in `index.html` (see docs for details). They ensure preview thumbnails include the correct map when sharing the URL.
 - Tailwind, React, and other dependencies are up‑to‑date as of February 2026.
 

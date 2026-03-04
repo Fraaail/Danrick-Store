@@ -17,10 +17,13 @@ describe('Store location embedding', () => {
     });
   });
 
-  it('exports a sensible Google Maps URL', () => {
-    // the link should reference Nagcarlan in some fashion
+  it('exports sensible Google Maps URLs', () => {
+    // link constant stays as the short shareable URL
     expect(GOOGLE_MAPS_LINK).toContain('maps.app');
-    expect(GOOGLE_MAPS_EMBED_URL).toContain('Nagcarlan');
+    // embed URL uses explicit coordinates with output=embed
+    expect(GOOGLE_MAPS_EMBED_URL).toContain('14.1123629');
+    expect(GOOGLE_MAPS_EMBED_URL).toContain('121.415928');
+    expect(GOOGLE_MAPS_EMBED_URL).toContain('output=embed');
   });
 
   it('renders an iframe pointing to the embed URL', () => {

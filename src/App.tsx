@@ -3,9 +3,12 @@ import { MapPin, Phone, Mail, Clock, ShoppingBag, Leaf } from 'lucide-react';
 import ThemeToggler from './components/ThemeToggler';
 
 export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/5A2WtDwy6SCTnB1UA";
-// Embed-friendly URL (uses search query with output=embed so it can be placed inside an iframe)
+// The short link is great for sharing, but Google blocks it when used inside an
+// iframe.  Instead we embed by latitude/longitude which Google allows.  These
+// coordinates were derived from the redirect target of the share URL and point
+// exactly at the store.
 export const GOOGLE_MAPS_EMBED_URL =
-  "https://www.google.com/maps?q=Brgy.+Banago+Nagcarlan+Philippines&output=embed";
+  "https://www.google.com/maps?q=14.1123629,121.415928&z=19&output=embed";
 
 export default function App() {
   return (
@@ -209,7 +212,7 @@ export default function App() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-stone-900 dark:text-white mb-1">Store Hours</h4>
-                    <p className="text-stone-600 dark:text-stone-400">Monday - Sunday<br/>6:00 AM - 8:00 PM</p>
+                    <p className="text-stone-600 dark:text-stone-400">Monday - Sunday<br/>6:00 AM - 6:00 PM</p>
                   </div>
                 </div>
 

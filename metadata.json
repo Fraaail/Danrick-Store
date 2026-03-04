@@ -1,5 +1,9 @@
 {
   "name": "Danrick's Store",
   "description": "Landing page for Danrick's Store, a taro seller and variety store in Nagcarlan, Laguna.",
+  "location": {
+    "latitude": 14.1480,
+    "longitude": 121.3570
+  },
   "requestFramePermissions": []
 }

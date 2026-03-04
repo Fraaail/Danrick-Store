@@ -13,6 +13,7 @@ Built with **React**, **Vite**, and **Tailwind CSS**. A minimal [Express](https:
 - Hero section introducing the store and core offerings
 - Product highlights: fresh taro, variety goods, local convenience
 - Embedded Google Map pointing to the physical location
+- Meta tags (Open Graph + geo) embedding the store's exact coordinates so social previews and search results show the map
 - Contact information with store hours, phone, and email
 - **Dark / Light theme toggler** with localStorage persistence and system-preference detection
 - Fully mobile‑responsive layout with smooth animations (via `motion`)
@@ -89,6 +90,7 @@ Source files:
 - The navigation links (`#about`, `#products`, `#location`, `#contact`) correspond to sections in `src/App.tsx`. Adjust if you modify IDs.
 - The contact phone number is placeholder (`+63 (XXX) XXX-XXXX`); replace with the real number before publishing.
 - Google Maps iframe coordinates target Banago, Nagcarlan, Laguna. Update the embed if the store moves.
+- Location meta tags live in `index.html` (see docs for details). They ensure preview thumbnails include the correct map when sharing the URL.
 - Tailwind, React, and other dependencies are up‑to‑date as of February 2026.
 
 ---

@@ -2,6 +2,11 @@ import { motion } from 'motion/react';
 import { MapPin, Phone, Mail, Clock, ShoppingBag, Leaf } from 'lucide-react';
 import ThemeToggler from './components/ThemeToggler';
 
+export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/5A2WtDwy6SCTnB1UA";
+// Embed-friendly URL (uses search query with output=embed so it can be placed inside an iframe)
+export const GOOGLE_MAPS_EMBED_URL =
+  "https://www.google.com/maps?q=Brgy.+Banago+Nagcarlan+Philippines&output=embed";
+
 export default function App() {
   return (
     <div className="min-h-screen bg-stone-50 dark:bg-stone-900 text-stone-800 dark:text-stone-200 font-sans selection:bg-purple-200 dark:selection:bg-purple-800 transition-colors">
@@ -154,7 +159,7 @@ export default function App() {
               </div>
               <div className="aspect-video w-full rounded-3xl overflow-hidden shadow-md border border-stone-200 dark:border-stone-700 bg-stone-200 dark:bg-stone-700">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15478.432658485295!2d121.3986445!3d14.133333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd5a6f2b4b4b4b%3A0x4b4b4b4b4b4b4b4b!2sBanago%2C%20Nagcarlan%2C%20Laguna%2C%20Philippines!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                  src={GOOGLE_MAPS_EMBED_URL}
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

@@ -3,12 +3,6 @@ import { MapPin, Phone, Mail, Clock, ShoppingBag, Leaf } from 'lucide-react';
 import ThemeToggler from './components/ThemeToggler';
 
 export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/5A2WtDwy6SCTnB1UA";
-// The short link is great for sharing, but Google blocks it when used inside an
-// iframe.  Instead we embed by latitude/longitude which Google allows.  These
-// coordinates were derived from the redirect target of the share URL and point
-// exactly at the store.
-export const GOOGLE_MAPS_EMBED_URL =
-  "https://www.google.com/maps?q=14.1123629,121.415928&z=19&output=embed";
 
 export default function App() {
   return (
@@ -160,17 +154,28 @@ export default function App() {
                 <h2 className="text-3xl font-bold text-stone-900 dark:text-white mb-4">Find Us Here</h2>
                 <p className="text-stone-600 dark:text-stone-400">Visit our store in Barangay Banago, Nagcarlan, Laguna.</p>
               </div>
-              <div className="aspect-video w-full rounded-3xl overflow-hidden shadow-md border border-stone-200 dark:border-stone-700 bg-stone-200 dark:bg-stone-700">
-                <iframe 
-                  src={GOOGLE_MAPS_EMBED_URL}
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen={true} 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Danrick's Store Location"
+              <div className="relative h-96 w-full rounded-3xl overflow-hidden border-4 border-brand-red/30 shadow-2xl group">
+                {/* Embedded Google Map focusing on Nagcarlan/Banago area */}
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d967.3508294070604!2d121.41592799999998!3d14.112362899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd5b3655955e87%3A0xedc551697d604c10!2sDanrick&#39;s%20Store!5e0!3m2!1sen!2sph!4v1772591756164!5m2!1sen!2sph"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy"
+                title="Danrick's Store Location"
+                referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
+                
+                <a 
+                  href={GOOGLE_MAPS_LINK} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="absolute bottom-4 left-4 right-4 md:left-auto md:right-4 bg-brand-red hover:bg-brand-darkRed text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center transition-colors z-10"
+                >
+                    <MapPin size={18} className="mr-2" />
+                    Open in Google Maps
+                </a>
               </div>
             </motion.div>
 
